@@ -14,19 +14,19 @@ export default class MainApp extends Component {
             <div className="clan">
                 <div>
                     <img src={clan.getIn(['clanBadgeImg', 'l'])}/>
+                    <span className="n">{clan.get('clanLevel')}</span>
                 </div>
                 <div>
+                    <h1>{clan.get('name')}</h1>
                     <ul>
-                        <li><strong>tag:</strong>{clan.get('tag')}</li>
-                        <li><strong>name:</strong>{clan.get('name')}</li>
-                        <li><strong>type:</strong>{clan.get('type')}</li>
-                        <li><strong>locationName:</strong>{clan.get('locationName')}</li>
-                        <li><strong>warFrequency:</strong>{clan.get('warFrequency')}</li>
-                        <li><strong>clanLevel:</strong>{clan.get('clanLevel')}</li>
-                        <li><strong>warWins:</strong>{clan.get('warWins')}</li>
-                        <li><strong>clanPoints:</strong>{clan.get('clanPoints')}</li>
-                        <li><strong>requiredTrophies:</strong>{clan.get('requiredTrophies')}</li>
-                        <li><strong>members:</strong>{clan.get('members')}</li>
+                        <li><strong>Total Points:</strong>{clan.get('clanPoints')}</li>
+                        <li><strong>Wars Won:</strong>{clan.get('warWins')}</li>
+                        <li><strong>Members:</strong>{clan.get('members')}</li>
+                        <li><strong>Type:</strong>{clan.get('type')}</li>
+                        <li><strong>Required Trophies:</strong>{clan.get('requiredTrophies')}</li>
+                        <li><strong>War Frequency:</strong>{clan.get('warFrequency')}</li>
+                        <li><strong>Clan Location:</strong>{clan.get('locationName')}</li>
+                        <li><strong>Clan tag:</strong>{clan.get('tag')}</li>
                     </ul>
                 </div>
                 <div className="desc">
