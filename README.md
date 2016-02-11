@@ -1,2 +1,3 @@
-# coc-api
-Clash of Clans api - web app (react)
+# coc-api [![Build Status](https://travis-ci.org/bendo/coc-api.svg?branch=master)](https://travis-ci.org/bendo/coc-api)
+
+Clash of Clans web app (react) using Clash of Clans API.
