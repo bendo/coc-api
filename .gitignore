@@ -1,0 +1,12 @@
+# logs
+logs
+*.log
+npm-debug.log*
+
+# idea
+.idea
+*.iml
+
+# generated directories
+node_modules
+dist
