@@ -1,12 +1,8 @@
-import './MainApp.styl';
+import './ClanInfo.styl';
 import React, {PropTypes} from 'react';
 import Component from 'react-pure-render/component';
 
 export default class MainApp extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const {clan} = this.props;
 
@@ -14,9 +10,8 @@ export default class MainApp extends Component {
             <div className="clan">
                 <div>
                     <img src={clan.getIn(['clanBadgeImg', 'l'])}/>
-                    <span className="n">{clan.get('clanLevel')}</span>
                 </div>
-                <div>
+                <div className="info">
                     <h1>{clan.get('name')}</h1>
                     <ul>
                         <li><strong>Total Points:</strong>{clan.get('clanPoints')}</li>

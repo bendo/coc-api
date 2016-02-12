@@ -6,9 +6,9 @@ function event(type, data) {
     return {type: type, payload: data};
 }
 
-function pAjax(method, url, data) {
+function pAjax(header) {
     return new Promise(function (resolve, reject) {
-        $j.ajax({method: method, url: url, data: data, dataType: 'json'})
+        $j.ajax(header)
             .done(resolve)
             .fail(function (jqXHR, textStatus, errorThrown) {
                 reject(new Error(`Ajax error: ${jqXHR}, ${textStatus}, ${errorThrown}}`));
@@ -17,11 +17,11 @@ function pAjax(method, url, data) {
 }
 
 function pGet(url, data) {
-    return pAjax('GET', url, data);
+    return pAjax({method: 'GET', url: url, data: data});
 }
 
 function pPost(url, data) {
-    return pAjax('POST', url, data);
+    return pAjax({method: 'POST', url: url, contentType: 'application/json', data: data});
 }
 
 function asyncEvent(type, promise) {

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import * as actionCreators from '../actions/MainActions';
+import * as actionCreators from '../actions/ClanActions';
 import { bindActionCreators } from 'redux';
-import MainApp from '../components/MainApp';
+import ClanInfo from '../components/ClanInfo';
 
 function mapStateToProps(state) {
     return {
@@ -13,4 +13,4 @@ function mapDispatchToProps(dispatch) {
     return {actions: bindActionCreators(actionCreators, dispatch)};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainApp);
+export default connect(mapStateToProps, mapDispatchToProps)(ClanInfo);
