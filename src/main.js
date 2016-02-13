@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import {applyMiddleware, createStore} from 'redux';
 import {Provider} from 'react-redux';
 import promiseMiddleware from 'redux-promise-middleware';
-import * as MainActions from './actions/ClanActions';
-import MainContainer from './containers/ClanContainer';
+import * as ClanActions from './actions/ClanActions';
+import ClanContainer from './containers/ClanContainer';
 import ActionTypes from './ActionTypes';
 import shortid from 'shortid';
 import Immutable from 'immutable';
@@ -31,7 +31,7 @@ let store = createStore(mainReducer, initialState, applyMiddleware(promiseMiddle
 
 $j(function () {
     ReactDOM.render(
-        <Provider store={store}><MainContainer/></Provider>, document.getElementById('react-app')
+        <Provider store={store}><ClanContainer/></Provider>, document.getElementById('react-app')
     );
-    store.dispatch(MainActions.loadClan());
+    store.dispatch(ClanActions.loadClan());
 });
