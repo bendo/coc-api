@@ -1,4 +1,3 @@
-import $j from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {applyMiddleware, createStore} from 'redux';
@@ -29,9 +28,6 @@ function mainReducer(state = initialState, {type, payload}) {
 
 let store = createStore(mainReducer, initialState, applyMiddleware(promiseMiddleware()));
 
-$j(function () {
-    ReactDOM.render(
-        <Provider store={store}><ClanContainer/></Provider>, document.getElementById('react-app')
-    );
-    store.dispatch(ClanActions.loadClan());
-});
+ReactDOM.render(<Provider store={store}><ClanContainer/></Provider>, document.getElementById('react-app'));
+store.dispatch(ClanActions.loadClan());
+
