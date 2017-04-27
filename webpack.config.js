@@ -1,26 +1,42 @@
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+      template: './index.html',
+      filename: 'index.html',
+      inject: 'body'
+})
+
 const config = {
-    context: __dirname + '/src',
+    context: path.resolve(__dirname, './src'),
     entry: {
-        javascript: './main.js',
-        html: './index.html'
+        app: './main.js'
     },
     output: {
-        filename: 'bundle.js',
-        path: __dirname + '/dist'
+        path: path.resolve(__dirname, './dist'),
+        filename: 'bundle.js'
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
                     presets: ['react', 'es2015']
                 }
             },
-            {test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader'},
-            {test: /\.html$/, loader: 'file?name=[name].[ext]'}
+            {
+                test: /\.styl$/, 
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader'},
+                    {loader: 'stylus-loader'}
+                ]
+            }
         ]
-    }
+    },
+    plugins: [HtmlWebpackPluginConfig]
 };
 module.exports = config;

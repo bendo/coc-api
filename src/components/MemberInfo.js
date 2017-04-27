@@ -21,7 +21,7 @@ const MemberInfo = function ({member}) {
 };
 
 MemberInfo.propTypes = {
-    member: React.Proptypes.any.isRequired
+    member: React.PropTypes.any.isRequired
 };
 
 export default MemberInfo;
