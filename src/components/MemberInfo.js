@@ -1,7 +1,7 @@
 import './MemberInfo.styl';
 import React from 'react';
 
-export default function ({member}) {
+const MemberInfo = function ({member}) {
     return (
         <div className="member">
             <div><h2>{member.get('clanRank')}</h2></div>
@@ -18,4 +18,10 @@ export default function ({member}) {
             </div>
         </div>
     );
-}
+};
+
+MemberInfo.propTypes = {
+    member: React.Proptypes.any.isRequired
+};
+
+export default MemberInfo;

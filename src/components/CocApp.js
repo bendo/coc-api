@@ -4,7 +4,7 @@ import shortid from 'shortid';
 import Immutable from 'immutable';
 import MemberInfo from './MemberInfo';
 
-export default function ({model}) {
+const CocApp = function ({model}) {
     const members = model.get('memberList', Immutable.List()).map((member) => (
         <MemberInfo key={shortid.generate()} member={member}/>
     ));
@@ -37,4 +37,10 @@ export default function ({model}) {
             </div>
         </div>
     );
-}
+};
+
+CocApp.propTypes = {
+    model: React.PropTypes.any.isRequired
+};
+
+export default CocApp;
