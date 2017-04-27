@@ -10,7 +10,7 @@
     "lint": "./node_modules/eslint/bin/eslint.js ./src/"
   },
   "engines": {
-    "node": "5.5.0"
+    "node": "7.9.0"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",
