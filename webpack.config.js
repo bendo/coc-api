@@ -1,16 +1,20 @@
 const path = require('path');
-
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './index.html',
       filename: 'index.html',
       inject: 'body'
 })
 
 const config = {
-    entry: './src/main.js',
+    context: path.resolve(__dirname, './src'),
+    entry: {
+        app: './main.js'
+    },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, './dist'),
         filename: 'bundle.js'
     },
     module: {
